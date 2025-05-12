@@ -77,7 +77,7 @@ export function ImageUpload({ value, onChange, className }: ImageUploadProps) {
   return (
     <div className={className}>
       {value ? (
-        <div className="relative rounded-md overflow-hidden aspect-video">
+        <div className="h-55 relative bg-[#D9D9D9] rounded-t-4xl overflow-hidden">
           <Image src={value || "/placeholder.svg"} alt="Concert image" fill className="object-cover" />
           <Button
             variant="destructive"
@@ -90,7 +90,7 @@ export function ImageUpload({ value, onChange, className }: ImageUploadProps) {
         </div>
       ) : (
         <div
-          className={`border-2 border-dashed rounded-md p-6 flex flex-col items-center justify-center gap-2 aspect-video cursor-pointer ${
+          className={`bg-[#D9D9D9] rounded-t-4xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer min-h-64 ${
             dragActive ? "border-primary bg-primary/10" : "border-muted-foreground/20"
           }`}
           onDragEnter={handleDrag}
@@ -101,7 +101,7 @@ export function ImageUpload({ value, onChange, className }: ImageUploadProps) {
         >
           <ImageIcon className="h-10 w-10 text-muted-foreground" />
           <div className="text-center">
-            <p className="text-sm font-medium">Drag & drop an image here</p>
+            <p className="text-sm font-medium">Drag & drop a image here</p>
             <p className="text-xs text-muted-foreground mt-1">or click to browse (max 5MB)</p>
           </div>
           <input ref={inputRef} type="file" accept="image/*" className="hidden" onChange={handleChange} />

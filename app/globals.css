@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@tailwind utilities;
+
+.icon-button {
+  @apply flex items-center justify-center w-8 h-8 bg-[#E3E3E3] rounded-full cursor-pointer;
+}
+
+.icon-button svg {
+  @apply w-4 h-4 text-[#2C2C2C];
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
